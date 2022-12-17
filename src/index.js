@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
-require('dotenv').config();
+const dotenv = require('dotenv');
 const userRoutes = require('./routes/user');
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,10 +17,11 @@ app.get('/', (req, res) => {
 });
 
 // mongodb connection
+mongoose.set('strictQuery', true);
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log('un error ', err));
 
 app.listen(port, () => {
   console.log('listening on port');
