@@ -11,11 +11,9 @@ const calendarSchema = mongoose.Schema({
   },
   headline: {
     headline: String,
-    require: true,
   },
   partner: {
     headline: String,
-    require: true,
   },
 });
 
