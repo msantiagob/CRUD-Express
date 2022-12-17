@@ -18,7 +18,9 @@ app.get('/', (req, res) => {
 // mongodb connection
 mongoose.set('strictQuery', true);
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(
+    'mongodb+srv://santiago:2866768@cluster0.yh9zc71.mongodb.net/Exhibitor?retryWrites=true&w=majority'
+  )
   .then(() => console.log('Connected to MongoDB Atlas'))
   .catch((err) => console.log(err));
 
