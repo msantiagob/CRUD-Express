@@ -2,7 +2,7 @@ const express = require('express');
 const calendarSchema = require('../models/calendar');
 const router = express.Router();
 
-// createe user
+// create user
 router.post('/calendar', (req, res) => {
   const calendar = calendarSchema(req.body);
   calendar

@@ -9,6 +9,14 @@ const calendarSchema = mongoose.Schema({
     type: String,
     require: true,
   },
+  headline: {
+    headline: String,
+    require: true,
+  },
+  partner: {
+    headline: String,
+    require: true,
+  },
 });
 
 module.exports = mongoose.model('Calendar', calendarSchema);
