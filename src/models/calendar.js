@@ -1,21 +1,89 @@
 const mongoose = require('mongoose');
 
-const calendarSchema = mongoose.Schema({
+const calendarSchema = new mongoose.Schema({
   date: {
     type: String,
     require: true,
   },
-  schedule: {
-    type: String,
+  am6: {
+    type: Object,
     require: true,
+    occupied: {
+      type: Boolean,
+      require: true,
+    },
+    headline: {
+      type: String,
+      require: true,
+    },
+    partner: {
+      type: String,
+      require: true,
+    },
   },
-  headline: {
-    type: String,
+  am9: {
+    type: Object,
     require: true,
+    occupied: {
+      type: Boolean,
+      require: true,
+    },
+    headline: {
+      type: String,
+      require: true,
+    },
+    partner: {
+      type: String,
+      require: true,
+    },
   },
-  partner: {
-    type: String,
+  pm12: {
+    type: Object,
     require: true,
+    occupied: {
+      type: Boolean,
+      require: true,
+    },
+    headline: {
+      type: String,
+      require: true,
+    },
+    partner: {
+      type: String,
+      require: true,
+    },
+  },
+  pm3: {
+    type: Object,
+    require: true,
+    occupied: {
+      type: Boolean,
+      require: true,
+    },
+    headline: {
+      type: String,
+      require: true,
+    },
+    partner: {
+      type: String,
+      require: true,
+    },
+  },
+  pm6: {
+    type: Object,
+    require: true,
+    occupied: {
+      type: Boolean,
+      require: true,
+    },
+    headline: {
+      type: String,
+      require: true,
+    },
+    partner: {
+      type: String,
+      require: true,
+    },
   },
 });
 

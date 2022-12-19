@@ -29,11 +29,11 @@ router.get('/calendar/:id', (req, res) => {
 });
 
 // update a user
-router.put('/calendar/:id', (req, res) => {
+router.patch('/calendar/:id', (req, res) => {
   const { id } = req.params;
-  const { date, schedule, headline, partner } = req.body;
+  const { date, am6, am9, pm12, pm3, pm6 } = req.body;
   calendarSchema
-    .updateOne({ _id: id }, { $set: { date, schedule, headline, partner } })
+    .updateOne({ _id: id }, { $set: { date, am6, am9, pm12, pm3, pm6 } })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
