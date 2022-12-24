@@ -2,7 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const userRoutes = require('./routes/user');
-const calendarRoutes = require('./routes/calendar');
+const bomberoRoutes = require('./routes/bomberos');
+const santaRitaRoutes = require('./routes/santa_rita');
+const ciudadelaRoutes = require('./routes/ciudadela');
 const cors = require('cors');
 dotenv.config();
 
@@ -13,7 +15,9 @@ app.use(cors());
 //middleware
 app.use(express.json());
 app.use('/api', userRoutes);
-app.use('/api', calendarRoutes);
+app.use('/api', bomberoRoutes);
+app.use('/api', santaRitaRoutes);
+app.use('/api', ciudadelaRoutes);
 
 // routes
 app.get('/', (req, res) => {
@@ -22,7 +26,6 @@ app.get('/', (req, res) => {
 
 // mongodb connection
 mongoose.set('strictQuery', true);
-console.log(process.env.MONGODB_URI);
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
